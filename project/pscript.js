@@ -5,7 +5,29 @@ function onFormSubmit(){
     var formData = readFormData();
     if (selectedRow == null){
     insertNewRecord(formData);
-    doAjax();
+    //doAjax();
+    var mysql = include('test');
+    var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "",
+    database: "test",
+
+    
+});
+
+con.connect(function(err) {
+   if (err) throw err;
+ console.log("connected");
+ });
+
+ var sql = "INSERT INTO `test`.`projectdata` (`projectname`, `projectdesc`) VALUES (formdata.projectName,formdata.projectDesc);";
+con.query(sql, function (err, result) {
+    if (err) {
+        throw err;
+    }
+    console.log(result.affectedRows + " record(s) updated");
+  });
     }
     else
     updateRecord(formData)
