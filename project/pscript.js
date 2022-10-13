@@ -6,7 +6,7 @@ function onFormSubmit(){
     if (selectedRow == null){
     insertNewRecord(formData);
     //doAjax();
-    var mysql = include('test');
+    var mysql = import('project.php');
     var con = mysql.createConnection({
     host: "localhost",
     user: "root",
