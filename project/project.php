@@ -12,6 +12,7 @@ if(isset($_POST['projectName'])){
     die("connection to this database failed due to" . mysqli_connect_error());
   }
     echo "Success connecting to the db";
+    
    $projectname = $_POST['projectName'];
    $projectdesc = $_POST['projectDesc'];
 
