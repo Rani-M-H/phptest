@@ -29,9 +29,6 @@ if(isset($_POST['projectName'])){
    }
    $con->close();
 }
-
-
-
 ?>
 
 
