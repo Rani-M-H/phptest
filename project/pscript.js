@@ -12,8 +12,6 @@ function onFormSubmit(){
     user: "root",
     password: "",
     database: "test",
-
-    
 });
 
 con.connect(function(err) {
