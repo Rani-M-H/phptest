@@ -1,13 +1,14 @@
 <?php
-   if(isset($_POST['username'])){
+
+if(isset($_POST['projectName'])){
   $servername = "localhost";
   $username = "root";
   $password = "";
-  $dbname = "test";
-  $conn = new mysqli($servername, $username, $password, $dbname); 
-//   $con = mysqli_connect( $servername, $username, $password);
 
-if(!$con){
+  $con = mysqli_connect( $servername, $username, $password); 
+  // $sql = mysql_select_db ('test',$conn) or die("unable to connect to database");
+
+  if(!$con){
     die("connection to this database failed due to" . mysqli_connect_error());
   }
     echo "Success connecting to the db";
@@ -15,7 +16,7 @@ if(!$con){
    $projectdesc = $_POST['projectDesc'];
 
    
-   $sql = "INSERT INTO `test`.`projectdata` (`projectname`, `projectdesc`) VALUES ( '$projectname', '$projectdesc');";
+   $sql = "INSERT INTO `test`.`projectdata` (`projectName`, `projectDesc`) VALUES ( '$projectname', '$projectdesc');";
    echo $sql;
    
    if($con->query($sql) == true){

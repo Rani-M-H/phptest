@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['username'])){
+if(isset($_POST['projectName'])){
   $servername = "localhost";
   $username = "root";
   $password = "";
@@ -11,12 +11,17 @@ if(isset($_POST['username'])){
     die("connection to this database failed due to" . mysqli_connect_error());
   }
    //echo "Success connecting to the db";
-
+    
+   
+    // $sql = "INSERT INTO `test`.`projectdata` (`projectName`, `projectDesc`) VALUES ( '$projectName', '$projectDesc');";
+  //  echo $sql;
    $username = $_POST['username'];
    $email = $_POST['email'];
    $password = $_POST['password'];
+    $projectName = $_POST['projectName'];
+    $projectDesc = $_POST['projectDesc'];
 
-  $sql = "INSERT INTO  `test2`.`datatesting` ( `username`, `email`, `password`) VALUES ('$username', '$email', '$password');";
+   $sql = "INSERT INTO  `test`.`details` ( `username`,`password`,`projectName`,`projectDesc`) VALUES ('$username',  '$password','$projectName','$projectDesc');";
   
   echo $sql;
 
@@ -52,6 +57,15 @@ if(isset($_POST['username'])){
            <label for="pwd">Password:</label>
            <input type="password" class="form-control" name="password" value="1" id="pwd" placeholder="Enter password" name="pwd">
          </div>
+
+         <div class="form-group">
+          <label class="validation-error hide" id="projectNameValidationError">This field is required.</label>
+          <input type="text" class="form-control" id="projectName" placeholder="Project Name" name="projectname">
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control" id="projectDesc" placeholder="Description of the project"
+              name="projectdesc">
+      </div>
          <div class="checkbox">
            <label><input type="checkbox" name="remember"> Remember me</label>
          </div>
