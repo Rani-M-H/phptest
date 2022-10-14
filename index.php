@@ -12,7 +12,6 @@ if(isset($_POST['projectName'])){
   }
    //echo "Success connecting to the db";
    
-   
     // $sql = "INSERT INTO `test`.`projectdata` (`projectName`, `projectDesc`) VALUES ( '$projectName', '$projectDesc');";
   //  echo $sql;
    $username = $_POST['username'];

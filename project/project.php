@@ -1,5 +1,4 @@
 <?php
-
 if(isset($_POST['projectName'])){
   $servername = "localhost";
   $username = "root";
@@ -30,9 +29,6 @@ if(isset($_POST['projectName'])){
    $con->close();
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
