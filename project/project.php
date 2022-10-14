@@ -15,8 +15,6 @@ if(isset($_POST['projectName'])){
    $projectname = $_POST['projectName'];
    $projectdesc = $_POST['projectDesc'];
 
-  
-
    $sql = "INSERT INTO `test`.`projectdata` (`projectName`, `projectDesc`) VALUES ( '$projectname', '$projectdesc');";
    echo $sql;
    
